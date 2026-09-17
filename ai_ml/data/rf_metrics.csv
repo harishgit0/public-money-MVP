@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1,true_positive,true_negative,false_positive,false_negative,train_original_projects,test_original_projects,train_samples,test_samples,trees
+0.9570707070707071,0.9209302325581395,1.0,0.9588377723970943,198,181,17,0,791,198,1582,396,100
