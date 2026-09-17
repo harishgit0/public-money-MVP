@@ -91,6 +91,38 @@ def get_project(project_id):
 
     return jsonify(project_to_dict(project))
 
+@app.route("/api/dashboard/summary")
+def dashboard_summary():
+    total_projects = Project.query.count()
+
+    low_risk = Project.query.filter_by(risk_band="Low").count()
+    medium_risk = Project.query.filter_by(risk_band="Medium").count()
+    high_risk = Project.query.filter_by(risk_band="High").count()
+    critical_risk = Project.query.filter_by(risk_band="Critical").count()
+
+    return jsonify({
+        "total_projects": total_projects,
+        "low_risk_projects": low_risk,
+        "medium_risk_projects": medium_risk,
+        "high_risk_projects": high_risk,
+        "critical_risk_projects": critical_risk
+    })
+
+
+@app.route("/api/projects/top-risk")
+def top_risk_projects():
+    projects = (
+        Project.query
+        .filter(Project.risk_score.isnot(None))
+        .order_by(Project.risk_score.desc())
+        .limit(10)
+        .all()
+    )
+
+    return jsonify([
+        project_to_dict(project)
+        for project in projects
+    ])
 
 @app.route("/api/risk-results", methods=["POST"])
 def update_risk_results():
