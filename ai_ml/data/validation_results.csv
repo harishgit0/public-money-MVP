@@ -1,0 +1,4 @@
+control,project_id,baseline_score,controlled_score,baseline_signal,controlled_signal,expected
+Cost anomaly,WS/86756/2023/00379,25.544068131974257,38.91692251622558,0.0,29.71745418722516,Risk should increase
+Text duplicate,WS/86756/2023/00379,25.544068131974257,28.333333333333332,88.8429391945637,100.0,Risk should increase
+Contractor concentration,WS/31090/2023/00304,30.476612859443645,55.861228244059035,15.384615384615385,100.0,Risk should increase

@@ -1,0 +1,7 @@
+pandas
+numpy
+fastembed
+
+# Optional supervised/unsupervised ML models.
+# Required when the environment permits scikit-learn/SciPy.
+scikit-learn
