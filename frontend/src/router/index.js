@@ -50,8 +50,8 @@ const router = createRouter({
 // TODO: there's no auth/session endpoint in the backend yet, so this is a
 // pass-through. Once one exists, check the session here before letting
 // anything but /login through.
-router.beforeEach((to, next) => {
-  next()
+router.beforeEach(() => {
+  return true
 })
 
 export default router
